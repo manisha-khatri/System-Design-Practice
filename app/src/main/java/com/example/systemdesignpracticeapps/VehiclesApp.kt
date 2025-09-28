@@ -1,3 +1,4 @@
+/*
 package com.example.systemdesignpracticeapps
 
 import android.app.Application
@@ -46,6 +47,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+*/
 /**
 Que:
 User will select the pickup date, return date, and pickup location, return location. And let's say there is a button at the
@@ -92,7 +94,8 @@ chatgpt:
 changes
 1. use supervisor scope removing coroutineScope
 2. use try/catch block only in the recommendation call
- */
+ *//*
+
 
 
 // ---------------- Data ----------------
@@ -100,18 +103,22 @@ changes
 interface ApiService {
     @GET("recommendation")
     suspend fun getRecommendation(
-        /*  @Query("pickupDate") pickupDate: String,
+        */
+/*  @Query("pickupDate") pickupDate: String,
           @Query("pickupLocation") pickupLocation: String,
           @Query("returnDate") returnDate: String,
-          @Query("returnLocation") returnLocation: String,*/
+          @Query("returnLocation") returnLocation: String,*//*
+
     ): Response<RecommendationDto>
 
     @GET("vehicles")
     suspend fun getVehicles(
-        /*  @Query("pickupDate") pickupDate: String,
+        */
+/*  @Query("pickupDate") pickupDate: String,
           @Query("pickupLocation") pickupLocation: String,
           @Query("returnDate") returnDate: String,
-          @Query("returnLocation") returnLocation: String,*/
+          @Query("returnLocation") returnLocation: String,*//*
+
     ): VehicleListDto
 }
 
@@ -229,9 +236,11 @@ class VehicleViewModel @Inject constructor(
 fun VehiclesScreen(
     viewModel:VehicleViewModel = hiltViewModel(),
     pickupDate: String,
-    /*  pickupLocation: String,
+    */
+/*  pickupLocation: String,
      returnDate: String,
-     returnLocation: String,*/
+     returnLocation: String,*//*
+
     onVehicleClicked: (Vehicle) -> Unit
 ) {
     val state by viewModel.uiState.collectAsState()
@@ -322,3 +331,4 @@ object AppModule {
     @Singleton
     fun providesApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 }
+*/
